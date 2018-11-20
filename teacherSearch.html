@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>研学</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div class="header">
+		<div class="main">
+			<div class="logo">
+				<a href="index.html"></a>
+				<span class="menuShow"></span>
+			</div>
+			<div class="menu">
+				<a href="index.html">首页</a>
+				<a href="material.html">教材&教参</a>
+				<a class="active" href="authentication.html">认证测评</a>
+				<a href="study.html">研学</a>
+				<a href="art.html">艺术节</a>
+				<a href="campus.html">戏剧校园</a>
+				<a href="partner.html">合作伙伴</a>
+				<a href="box.html">戏剧盒子</a>
+				<a href="about.html">关于我们</a>
+			</div>
+			<div class="headerApp">
+				<span>APP下载</span>
+				<div>
+					<img src="images/i_111.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner banner3 banner10"></div>
+	<div class="teaderSearch">
+		<div class="main">
+			<div style="height:670px;">
+				<table>
+					<thead>
+						<th>姓名</th>
+						<th>身份证号</th>
+						<th>等级</th>
+						<th>合格</th>
+					</thead>
+					<tbody id="tbody"></tbody>
+				</table>
+			</div>
+			<div class="pagination">
+				
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jqpaginator.min.js"></script>
+	<script src="js/base.js"></script>
+	<script src="js/footer.js"></script>
+	<script type="text/javascript">
+		
+	    function pagination(index,first){
+		    $.ajax({
+		    	url:'/edu/manage/findWebMTeacherListByPage',
+		    	method:'POST',
+		    	data:{
+		    		start:(index-1)*10,
+		    		hasDel:0,
+		    		limit:10,
+		    	},
+		    	success:function(data){
+		    		if(first){
+				    	$('.pagination').jqPaginator({
+						    totalPages: data.value.total/10 <= 1 ? data.value.total/10 : parseInt(data.value.total/10)+1,
+						    visiblePages: 10,
+						    currentPage: 1,
+						    //first: '<li class="first"><a href="javascript:void(0);">首页</a></li>',
+						    prev: '<a href="javascript:void(0);">上一页</a>',
+						    next: '<a href="javascript:void(0);">下一页</a>',
+						    //last: '<li class="last"><a href="javascript:void(0);">Last</a></li>',
+						    page: '<a href="javascript:void(0);">{{page}}</a>',
+						    onPageChange: function (num) {
+						        pagination(num)
+						    }
+						});
+		    		}
+		    		var html = '';
+		    		for(var i=0;i<data.value.list.length;i++){
+		    			html = html + "<tr>"+
+							"<td>"+data.value.list[i].name+"</td>"+
+							"<td>"+data.value.list[i].certId+"</td>"+
+							"<td>"+(data.value.list[i].level == 1 ? '初级' : (data.value.list[i].level == 2 ? '中级' : '高级'))+"</td>"+
+							"<td>"+(data.value.list[i].level == 1 ? '合格' : '不合格')+"</td>"+
+							"</tr>"
+		    		}
+		    		$('#tbody').html(html)
+		    		$('.pagination').html()
+		    	}
+		    })
+	    }
+
+    	pagination(1,true)
+	</script>
+</body>
+</html>
