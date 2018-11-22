@@ -87,8 +87,47 @@ a{
 	border-bottom: 6px solid #fff;
 	display: inline-block;
 	height: 71px;
-	width: 90px;
+	padding: 0 12px;
+	position: relative;
+}
 
+.menu a.login{
+	width: 90px;
+	padding: 0;
+	cursor: pointer;
+}
+
+.menu a span{
+	display: none;
+	position: absolute;
+	width: 100%;
+	padding: 10px 0 0;
+	line-height: 35px;
+	left: 0;
+	top: 67px;
+	background: #fff;
+}
+
+.menu .login:hover{
+	border-color: #fff
+}
+
+.menu .loginIn:hover span{
+	display: block;	
+}
+
+
+
+.menu a span font{
+	display: block;
+	font-size: 14px;
+	font-weight: 100;
+}
+
+.menu a span font:hover{
+	background: #00a8f1;
+	color: #fff;
+	cursor: pointer;
 }
 
 .menu .active, .menu a:hover{
@@ -197,6 +236,9 @@ a{
 }
 .banner10{
 	background-image: url(images/banner10.jpg);
+}
+.banner11{
+	background-image: url(images/banner11.jpg);
 }
 
 .banner a{
@@ -2363,6 +2405,60 @@ a{
 	line-height: 20px;
 	text-align: center;
 }
+
+.videoH2{
+	line-height: 200px;
+	font-size: 48px;
+	text-align: center;
+	font-weight: bold;
+	color: #333
+}
+
+.viedeSel img{
+	width: 1280px;
+}
+
+.viedeVip{
+	position: relative;
+	overflow: hidden;
+	height: 340px;
+}
+
+.switchCont{
+	position: relative;
+	overflow: hidden;
+	width: 1310px;
+}
+
+.switchCont div{
+	display: inline-block;
+	float: left;
+	margin-right: 25px;
+	width: 410px;
+	height: 340px;
+	position: relative;
+}
+
+.switchCont div img{
+	width: 410px;
+	height: 340px;
+}
+
+.videoItem .switchCont div{
+	width: 235px;
+	padding: 8px;
+	height: 270px;
+	border:1px solid #ccc;
+}
+
+.videoItem .switchCont div img{
+	width: 236px;
+	height: 160px;
+	margin-bottom: 18px;
+}
+
+
+
 
 
 
