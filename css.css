@@ -97,6 +97,16 @@ a{
 	cursor: pointer;
 }
 
+.menu a.login font{
+	display: block;
+	overflow: hidden;
+	height:	70px;
+}
+
+.menu a:hover span{
+	display: block;
+}
+
 .menu a span{
 	display: none;
 	position: absolute;
@@ -2406,6 +2416,10 @@ a{
 	text-align: center;
 }
 
+.videoVip{
+	display: none;
+}
+
 .videoH2{
 	line-height: 200px;
 	font-size: 48px;
@@ -2414,20 +2428,64 @@ a{
 	color: #333
 }
 
+.viedeSel{
+	position: relative;
+}
+
+.viedeSel span{
+	position: absolute;
+	left: 0;
+	right: 310px;
+	display: block;
+	text-align: center;
+	line-height: 200px;
+	font-size: 60px;
+	font-weight: bold;
+	color: #fff;
+	top: 0;
+}
+
 .viedeSel img{
 	width: 1280px;
+	cursor: pointer;
 }
 
 .viedeVip{
 	position: relative;
 	overflow: hidden;
-	height: 340px;
+	height: 234px;
+}
+
+.switch{
+	transition: .3s all;
+	opacity: .2;
+	width: 51px;
+	height: 100px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	background: url(images/videoLeft.png) no-repeat;
+	background-size: 100% auto;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.switch:hover{
+	opacity: .8
+}
+
+.switchRight{
+	right: 0;
+	left: auto;
+	background-image: url(images/videoRight.png);
 }
 
 .switchCont{
 	position: relative;
 	overflow: hidden;
-	width: 1310px;
+	width: 500%;
 }
 
 .switchCont div{
@@ -2435,27 +2493,336 @@ a{
 	float: left;
 	margin-right: 25px;
 	width: 410px;
-	height: 340px;
+	height: 234px;
 	position: relative;
 }
 
-.switchCont div img{
+.switchCont div img,.switchCont div video{
 	width: 410px;
-	height: 340px;
+	height: 234px;
+}
+
+.viedeVip .switchCont div:before{
+	content: '';
+	display: block;
+	width: 77px;
+	height: 77px;
+	background: url(images/vip_10.png) no-repeat;
+	position: absolute;
+	top: 0;
+	right: 0px;
+}
+
+.switchCont div:after{
+	content: '';
+	display: block;
+	width: 134px;
+	height: 134px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: url(images/vip_13.png) no-repeat;
+}
+
+.videoItem{
+	overflow: hidden;
+	height: 322px;
+	margin-top: -20px;
+	position: relative;
+}
+
+.videoItem .switch{
+	width: 26px;
+	height: 51px;
+	top: -112px;
+	left: 9px;
+}
+
+.videoItem .switchRight{
+	right: 9px;
+	left: auto;
+}
+
+.videoItem .switchCont{
+	padding: 20px 0;
+	margin-left: -244px;
 }
 
 .videoItem .switchCont div{
-	width: 235px;
+	width: 226px;
 	padding: 8px;
-	height: 270px;
-	border:1px solid #ccc;
+	height: 231px;
+	margin-right: 15px;
+	border:1px solid #fff;
+	transition: .3s all;
+	cursor: pointer;
+	position: relative;
 }
 
-.videoItem .switchCont div img{
-	width: 236px;
-	height: 160px;
-	margin-bottom: 18px;
+.videoItem .switchCont div span{
+	display: block;
+	font-size: 20px;
+	padding-top: 20px;
 }
+
+.videoItem .switchCont div p{
+	font-size: 16px;
+	padding-top: 12px;
+	color: #333;
+}
+
+.videoItem .switchCont div p font{
+	color: #6ca7c1
+}
+
+.isVip,.switchCont div video,.switchCont div.active img,.switchCont div.active:after,.switchCont div.active:before{
+	display: none;
+}
+
+.switchCont div.active video{
+	display: block;
+}
+
+.videoItem .switchCont div:hover{
+	border-color: #e4e4e4;
+	box-shadow: 0px 0 15px #e4e4e4	
+}
+
+.videoItem .switchCont div img,.videoItem .switchCont div video{
+	width: 226px;
+	height: 129px;
+}
+
+.videoItem .switchCont div:after{
+	width: 80px;
+	height: 80px;
+	background-size: 100%;
+	margin: 0 auto;
+	top: 40px;
+}
+
+.loginPop,.addVideo{
+	background: rgba(0,0,0,0.5);
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 100;
+	display: none;
+}
+
+.loginBox,.addBox{
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: #fff;
+	width: 430px;
+	height: 370px;
+	color: #333;
+	font-size: 16px;
+	padding: 0 60px;
+}
+
+.loginBox h2,.addVideo h2{
+	text-align: center;
+	font-size: 24px;
+	padding: 35px 0 0;
+	color: #3CB1FF;
+	font-weight: 400;
+}
+
+.loginBox ul li{
+	position: relative;
+	padding-bottom: 6px;
+    border-bottom: 1px solid #cecece;
+    position: relative;
+    margin-top: 40px;
+}
+
+.loginCenter{
+	text-align: center;
+	color: red;
+	padding-top: 20px;
+}
+
+.loginBox ul li input{
+	border: 0 none;
+	width: 100%;
+	font-size: 14px;
+	outline: 0;
+}
+.close{
+	transition: .3s all;
+	color: #666;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	cursor: pointer;
+}
+.close:hover{
+	transform:rotate(180deg);
+}
+
+.loginBtn{
+	margin-top: 50px;
+}
+
+.loginBtn span{
+	display: block;
+	cursor: pointer;
+	border: 1px solid #dcdfe6;
+	-webkit-appearance: none;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: 0;
+	margin: 0;
+	-webkit-transition: .1s;
+	transition: .1s;
+	font-weight: 500;
+	padding: 12px 20px;
+	font-size: 14px;
+	border-radius: 20px;
+     background-color: #409EFF;
+	color: #fff;
+}
+
+.loginBtn span:hover{
+	background: #3CB1FF
+}
+
+.alertPop{
+	text-align: center;
+	z-index: 101;
+	display: none;
+	position: fixed;
+	width: 200px;
+	border-radius: 4px;
+	height: 30px;
+	line-height: 30px;
+	background: #fef0f0;
+	color: #f56c6c;
+	top: 40%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.alertPop2{
+	color: #67c23a;
+	background: #e1f3d8
+}
+
+.addBox{
+	padding: 0 20px;
+	width: 780px;
+}
+
+.addBox p{
+	padding-top: 20px;
+	text-align: center;
+}
+
+.addBox dl{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px 0;
+}
+
+.addBox dl dt{
+	width: 100%;
+	padding: 0 10px;
+}
+
+.addBox dl dd{
+	box-sizing: border-box;
+	width: 25%;
+	padding: 10px;
+	position: relative;
+}
+
+.addBtn{
+	position: absolute;
+	bottom: 0;
+	height: 50px;
+	text-align: center;
+	left: 0;
+	right: 0;
+}
+
+.addBtn span{
+	cursor: pointer;
+	margin:0 10px;
+	color: #666;
+}
+
+.addBtn .addSubmit{
+	color: #409EFF
+}
+
+.scroll{
+	height: 190px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.scroll label{
+	cursor: pointer;
+}
+
+
+
+    input[type=checkbox]{
+    	margin: 0px 10px -4px 0;
+        /*同样，首先去除浏览器默认样式*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        /*编辑我们自己的样式*/
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border:1px solid #00BFFF;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+    }
+    input[type=checkbox]:after{
+        content: '✔';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #00BFFF;
+        color: #fff;
+        text-align: center;
+        line-height: 18px;
+        /*增加动画*/
+        -webkit-transition: all ease-in-out 300ms;
+        -moz-transition: all ease-in-out 300ms;
+        transition: all ease-in-out 300ms;
+        /*利用border-radius和opacity达到填充的假象，首先隐藏此元素*/
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        opacity: 0;
+    }
+    input[type=checkbox]:checked:after{
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        opacity: 1;
+    }
 
 
 
