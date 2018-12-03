@@ -3,6 +3,12 @@
 	padding: 0;
 }
 
+
+input:-webkit-autofill,
+{
+-webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
 li{
 	list-style: none;
 }
@@ -92,15 +98,22 @@ a{
 }
 
 .menu a.login{
+	line-height: 101px;
 	width: 90px;
 	padding: 0;
 	cursor: pointer;
 }
 
-.menu a.login font{
-	display: block;
+.menu a.login .isLogin{
+	display: inline-block;
+	border:1px solid #00a8f1;
+	border-radius: 35px;
+	line-height: 35px;
+	height: 35px;
+	width: 80px;
+	color: #fff;
 	overflow: hidden;
-	height:	70px;
+	background: #00a8f1;
 }
 
 .menu a:hover span{
@@ -1993,6 +2006,7 @@ a{
 	border: 1px dotted #eea566;
 	margin-left: -1px;
 	position: relative;
+	display: inline-block;
 }
 
 .mechanismCont a span{
@@ -2106,6 +2120,8 @@ a{
 
 
 .about{
+ 	width: 1280px;
+    margin: 0 auto;
 	border-top:8px solid #1d7aeb;
 	background: url(images/about_07.png) no-repeat center 228px;
 }
@@ -2458,11 +2474,11 @@ a{
 
 .switch{
 	transition: .3s all;
-	opacity: .2;
+	opacity: 1;
 	width: 51px;
 	height: 100px;
 	position: absolute;
-	left: 0;
+	left: -55px;
 	top: 0;
 	bottom: 0;
 	margin: auto 0;
@@ -2473,11 +2489,11 @@ a{
 }
 
 .switch:hover{
-	opacity: .8
+	opacity: 1
 }
 
 .switchRight{
-	right: 0;
+	right: -55px;
 	left: auto;
 	background-image: url(images/videoRight.png);
 }
@@ -2497,23 +2513,36 @@ a{
 	position: relative;
 }
 
+
+
 .switchCont div img,.switchCont div video{
 	width: 410px;
 	height: 234px;
 }
+.viedeVip .switchCont {
+	margin-left: -435px;
+}
 
-.viedeVip .switchCont div:before{
+.viedeVip .switchCont div:before,.video11 .videoItem .switchCont div:before{
 	content: '';
 	display: block;
 	width: 77px;
 	height: 77px;
 	background: url(images/vip_10.png) no-repeat;
+	background-size: 100%;
 	position: absolute;
 	top: 0;
 	right: 0px;
 }
 
-.switchCont div:after{
+.video11 .videoItem .switchCont div:before{
+	width:45px;
+	height: 45px;
+	top: 8px;
+	right: 8px;
+}
+
+.switchCont div span.playImg:after{
 	content: '';
 	display: block;
 	width: 134px;
@@ -2534,21 +2563,33 @@ a{
 	position: relative;
 }
 
-.videoItem .switch{
+.videoBox{
+	position: relative;
+}
+
+.video11 .videoItem .switchCont div{
+	height: 130px;
+}
+
+.video11 .videoItem{
+	height: 170px;
+}
+
+.videoBox .switch{
 	width: 26px;
 	height: 51px;
 	top: -112px;
-	left: 9px;
+	left: -30px;
 }
 
-.videoItem .switchRight{
-	right: 9px;
+.videoBox .switchRight{
+	right: -30px;
 	left: auto;
 }
 
 .videoItem .switchCont{
 	padding: 20px 0;
-	margin-left: -244px;
+	margin-left: -259px;
 }
 
 .videoItem .switchCont div{
@@ -2558,15 +2599,20 @@ a{
 	margin-right: 15px;
 	border:1px solid #fff;
 	transition: .3s all;
-	cursor: pointer;
 	position: relative;
 }
-
 .videoItem .switchCont div span{
 	display: block;
 	font-size: 20px;
 	padding-top: 20px;
 }
+
+.videoItem .switchCont div span.playImg{
+	position: relative;
+	padding: 0;
+	cursor: pointer;
+}
+
 
 .videoItem .switchCont div p{
 	font-size: 16px;
@@ -2596,7 +2642,7 @@ a{
 	height: 129px;
 }
 
-.videoItem .switchCont div:after{
+.videoItem .switchCont div span.playImg:after{
 	width: 80px;
 	height: 80px;
 	background-size: 100%;
@@ -2623,7 +2669,7 @@ a{
 	top: 0;
 	bottom: 0;
 	background: #fff;
-	width: 430px;
+	width: 290px;
 	height: 370px;
 	color: #333;
 	font-size: 16px;
@@ -2655,7 +2701,7 @@ a{
 .loginBox ul li input{
 	border: 0 none;
 	width: 100%;
-	font-size: 14px;
+	font-size: 16px;
 	outline: 0;
 }
 .close{
@@ -2709,7 +2755,7 @@ a{
 	line-height: 30px;
 	background: #fef0f0;
 	color: #f56c6c;
-	top: 40%;
+	top: 53%;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -2738,7 +2784,7 @@ a{
 
 .addBox dl dt{
 	width: 100%;
-	padding: 0 10px;
+	padding: 10px;
 }
 
 .addBox dl dd{
@@ -2777,6 +2823,48 @@ a{
 	cursor: pointer;
 }
 
+.vipRight{
+	width: 156px;
+	height: 136px;
+	background: url(images/vip.png) no-repeat;
+	position: fixed;
+	bottom: 10%;
+	left: 50%;
+	margin-left: 650px;
+}
+
+
+.videoPlay{
+	padding: 20px 0;
+	min-height: 500px;
+}
+
+.videoShare{
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 100px;
+	margin-left: 460px;
+	z-index:999;
+	background: #fff;
+	padding: 10px;
+	width: 150px;
+	box-shadow: 0 0 10px #fff;
+}
+
+.videoShare canvas{
+	margin-top: 5px;
+	width: 150px;
+}
+
+.videoShare span{
+	color: #666;
+	font-size: 14px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+}
 
 
     input[type=checkbox]{
@@ -2832,13 +2920,23 @@ a{
 
 
 @media screen and (max-width: 700px) {
+	.videoPlay{
+		min-height: 100px;
+	}
+	.videoShare{
+		display: none;
+	}
+	.about{
+		width: auto;
+	}
 	.loginBox, .addBox{
 		width: 80%;
 		padding: 0 5%;
 	}
 	.videoItem,.viedeVip,.switchCont{
-		height: auto;
+		height: auto!important;
 		width: 100%;
+		margin:0!important;
 	}
 	.switch{
 		display: none;

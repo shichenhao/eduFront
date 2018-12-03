@@ -25,7 +25,7 @@
 				<a href="about.html">关于我们</a>
 				<a href="video.html">视频中心</a>
 				<a class="login">
-					<font class="isLogin">登录</font>
+					<font class="isLogin">会员登录</font>
 					<span>
 						<font class="upPas">修改密码</font>
 						<font class="loginOut">退出</font>
@@ -354,20 +354,22 @@
 		    	success:function(data){
 		    		var html = '';
 		    		var newArr = []
-		    		var newData= new Set(data.value.map((i)=>{
+		    		/*var newData= new Set(data.value.map((i)=>{
 		    			return i.province
-		    		}))
+		    		}))*/
+		    		newData = ["四川省","浙江省","福建省","贵州省","广东省","山东省","辽宁省","香港","湖南省","陕西省","江西省"]
 
-		    		for(var item of newData){
+		    		for(var i=0;i<newData.length;i++){
 		    			var arr = {}
-		    			data.value.map(y=>{
+		    			data.value.map(function(item){
 		    				arr[item]=[]
 		    			})
 		    			newArr.push(arr)
+
 		    		}
 
-		    		address.map((a,i)=>{
-		    			data.value.map(y=>{
+		    		address.map(function(a,i){
+		    			data.value.map(function(y){
 		    				address[i][y.province] && address[i][y.province].push(y.name)
 		    			})
 		    		})
@@ -377,7 +379,7 @@
 		    		for(var i=0;i<address.length;i++){
 		    			for(var a in address[i]){
 			    			html = html + '<a>'+a+'<span>'+
-			    				address[i][a].map(item=>{
+			    				address[i][a].map(function(item){
 			    					return '<i>'+item+'</i>'
 			    				})
 			    			+'</span></a>'

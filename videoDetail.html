@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>视频中心</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div class="header">
+		<div class="main">
+			<div class="logo">
+				<a href="index.html"></a>
+				<span class="menuShow"></span>
+			</div>
+			<div class="menu">
+				<a href="index.html">首页</a>
+				<a href="material.html">教材&教参</a>
+				<a href="authentication.html">认证测评</a>
+				<a href="study.html">研学</a>
+				<a href="art.html">艺术节</a>
+				<a href="campus.html">戏剧校园</a>
+				<a href="partner.html">合作伙伴</a>
+				<a href="box.html">戏剧盒子</a>
+				<a href="about.html">关于我们</a>
+				<a class="active" href="video.html">视频中心</a>
+				<a class="login">
+					<font class="isLogin">会员登录</font>
+					<span>
+						<font class="upPas">修改密码</font>
+						<font class="loginOut">退出</font>
+					</span>
+				</a>
+			</div>
+			<div class="headerApp">
+				<span>APP下载</span>
+				<div>
+					<img src="images/i_111.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="video">
+		<div class="main">
+			<div class="videoPlay">
+			</div>
+			<div class="videoShare">
+				可扫码手机上看哦！
+				<span>✖</span>
+				<div id="qrcode"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/baseHtml.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.qrcode.min.js"></script>
+	<script src="js/jqpaginator.min.js"></script>
+	<script src="js/base.js"></script>
+	<script src="js/footer.js"></script>
+	<script type="text/javascript">
+
+		function GetQueryString(name){
+		     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		     var r = window.location.search.substr(1).match(reg);
+		     if(r!=null)return  unescape(r[2]); return null;
+		}
+
+		$(function(){
+			getVideo({
+				id:GetQueryString('id')
+			});
+
+			$('.videoShare span').click(function(){
+				$('.videoShare').remove();
+			})
+
+		    jQuery(function(){
+			    jQuery('#qrcode').qrcode(window.location.href);
+			})
+
+
+		})
+		// 会员添加视频
+		function getVideo(data){
+
+		    ajax({
+		    	url:'/medu/user/findMVideo',
+		    	data:data,
+		    	success:function(res){
+		    		if(res.value.permissions === 1 && !localStorage.getItem('userInfo')){
+						$(".loginBox ul:eq(1),.loginBtn span:eq(1)").hide();
+						$(".loginPop").show();
+    					$(".alertPop:eq(0)").fadeIn().delay(500).fadeOut(200).find('div').html('登录后方可观看！');
+		    		}else{
+		    			$('.videoPlay').html('<video controls="controls" src="'+res.value.url+'" autoplay="autoplay"  width="100%" height="100%" controls="controls"></video>')
+		    		}
+
+		    	}
+		    })
+		}
+	</script>
+</body>
+</html>

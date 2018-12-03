@@ -1,7 +1,7 @@
 document.writeln("	<div class=\'loginPop\'>");
 document.writeln("		<div class=\'loginBox\'>");
 document.writeln("			<span class=\'close\'>✖</span>");
-document.writeln("			<h2>登录</h2>");
+document.writeln("			<h2>会员登录</h2>");
 document.writeln("			<ul>");
 document.writeln("				<li>");
 document.writeln("					<input type=\'text\' placeholder=\'手机号\' class=\'text mobile\'>");
@@ -23,7 +23,7 @@ document.writeln("				<span>登录</span>");
 document.writeln("				<span>确认</span>");
 document.writeln("			</div>");
 document.writeln("			<div class=\'loginCenter\'>");
-document.writeln("				忘记密码？联系客服010-80220687");
+document.writeln("				忘记密码？联系客服010-80220817");
 document.writeln("			</div>");
 document.writeln("		</div>");
 document.writeln("	</div>");
