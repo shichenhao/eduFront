@@ -192,7 +192,7 @@
 	<div class="addVideo">
 		<div class="addBox">
 			<h2>会员权益</h2>
-			<p>您还可选择<span></span>个视频完整观看</p>
+			<p>您可选择<span></span>个视频完整观看</p>
 			<span class="close closes">✖</span>
 			<div class="scroll">
 				<dl>
@@ -214,6 +214,7 @@
 	<script src="js/footer.js"></script>
 	<script type="text/javascript">
 
+			var checkIds = ''
 
 			var videoLs = 0
 			var list = [];
@@ -261,7 +262,7 @@
 			})
 
 			$('.addSubmit').click(function(){
-				var vals = ''
+				var vals = checkIds
 				if($('.scroll input:checkbox:checked').length > videoLs){
     				$(".alertPop").fadeIn().delay(500).fadeOut(200).find('div').html('您最多可以选择'+videoLs+'个视频');  
 					return false;
@@ -272,6 +273,8 @@
 				var param ={
 					videoIds:vals
 				}
+
+				//alert(vals)
 				createUserVideo(param)
 			})
 
@@ -289,23 +292,10 @@
 				getVideoVip({
 					limit:200,
 	                sort: 'sortNo',
-	                order:'asc'
+	                order:'asc',
+	                associatorUserSelect:1
 				});
 			}
-
-
-		        $('.viedeVip .switchLeft').click(function(){
-	                $(this).closest(".viedeVip").find(".switchCont").stop().animate({ "margin-left": -870 }, 500, function() {
-		                $(this).closest(".viedeVip").find(".switchCont div").first().insertAfter($(this).closest(".switchCont").find("div:last")); 
-		                $(this).closest(".viedeVip").find(".switchCont").css("margin-left", -435); //初始化marginleft
-		            });
-		        })
-		        $('.viedeVip .switchRight').click(function(){
-	                $(this).closest(".viedeVip").find(".switchCont").stop().animate({ "margin-left":  0 }, 500, function() {
-		                $(this).closest(".viedeVip").find(".switchCont div").last().insertBefore($(this).closest(".switchCont").find("div:first")); 
-		                $(this).closest(".viedeVip").find(".switchCont").css("margin-left", -435); //初始化marginleft
-		            });
-		        })
 
 
 
@@ -326,11 +316,25 @@
 		    })
 
 
+		        $('.videoVip .switchLeft').click(function(){
+	                $(this).closest(".videoVip").find(".switchCont").stop().animate({ "margin-left": -870 }, 500, function() {
+		                $(this).closest(".videoVip").find(".switchCont div").first().insertAfter($(this).closest(".switchCont").find("div:last")); 
+		                $(this).closest(".videoVip").find(".switchCont").css("margin-left", -435); //初始化marginleft
+		            });
+		        })
+		        $('.videoVip .switchRight').click(function(){
+	                $(this).closest(".videoVip").find(".switchCont").stop().animate({ "margin-left":  0 }, 500, function() {
+		                $(this).closest(".videoVip").find(".switchCont div").last().insertBefore($(this).closest(".switchCont").find("div:first")); 
+		                $(this).closest(".videoVip").find(".switchCont").css("margin-left", -435); //初始化marginleft
+		            });
+		        })
+
+
 		})
 		// 获取免费视频
 		function getVideo(data){
 		    ajax({
-		    	url:'/medu/user/findMVideoList',
+		    	url:'/edu/user/findMVideoList',
 		    	data:data,
 		    	success:function(data){
 		    		list = data.value
@@ -424,9 +428,9 @@
 			video10.unshift(video10Bt)
 			video10.pop()
 
-			var video11Bt=video11[video11.length-1]
+			/*var video11Bt=video11[video11.length-1]
 			video11.unshift(video11Bt)
-			video11.pop()
+			video11.pop()*/
 
 
 
@@ -435,31 +439,31 @@
 				html1+='<div><span class="playImg" data-id="'+item.id+'"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video2.forEach(function(item){
-				html2+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html2+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video3.forEach(function(item){
-				html3+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html3+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video4.forEach(function(item){
-				html4+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html4+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video5.forEach(function(item){
-				html5+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html5+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video6.forEach(function(item){
-				html6+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html6+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video7.forEach(function(item){
-				html7+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html7+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video8.forEach(function(item){
-				html8+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html8+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video9.forEach(function(item){
-				html9+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html9+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video10.forEach(function(item){
-				html10+='<div><span class="playImg"><img src="'+item.headImgUrl+'"></span><span<video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video>>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html10+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><span<video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video>>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			$('.video1 .switchCont').html(html1)
 			$('.video2 .switchCont').html(html2)
@@ -531,20 +535,26 @@
 				$('.video10 .switch').remove();
 				$('.video10 .switchCont').css({margin:0})
 			}
-			if(!video11.length){
+			/*if(!video11.length){
 				$('.video11').hide()
 			}else if(video11.length<6){
 				$('.video11 .switch').remove();
 				$('.video11 .switchCont').css({margin:0})
-			}
+			}*/
 
 		}
 		// 获取会员视频
 		function getVideoVip(data){
-			var html ='';
+			var html1 ='';
+			var html2 ='';
+			var html3 ='';
+			var html4 ='';
+			var html5 ='';
+			var html6 ='';
+			var html7 ='';
 
 		    ajax({
-		    	url:'/medu/user/findMVideoListForVip',
+		    	url:'/edu/user/findMVideoListForVip',
 		    	data:data,
 		    	success:function(data){
 		    		var checkList1 = 0
@@ -562,54 +572,61 @@
 		    			if(item.type === 1){
 		    				if(checkList1 ===0){
 		    					checkList1 = 1
-		    					html+= '<dt>中国传统故事</dt>'
+		    					html1+= '<dt>中国传统故事</dt>'
 		    				}
-		    				html+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
+		    				html1+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
 		    			}else if(item.type === 2){
 		    				if(checkList2 ===0){
 		    					checkList2 = 1
-		    					html+= '<dt>经典课本剧</dt>'
+		    					html2+= '<dt>经典课本剧</dt>'
 		    				}
-		    				html+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
+		    				html2+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
 		    			}else if(item.type === 3){
 		    				if(checkList3 ===0){
 		    					checkList3 = 1
-		    					html+= '<dt>经典故事改编</dt>'
+		    					html3+= '<dt>经典故事改编</dt>'
 		    				}
-		    				html+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
+		    				html3+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
 		    			}else if(item.type === 4){
 		    				if(checkList4 ===0){
 		    					checkList4 = 1
-		    					html+= '<dt>外国精彩故事改编</dt>'
+		    					html4+= '<dt>外国精彩故事改编</dt>'
 		    				}
-		    				html+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
+		    				html4+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
 		    			}else if(item.type === 5){
 		    				if(checkList5 ===0){
 		    					checkList5 = 1
-		    					html+= '<dt>戏剧示范课初级</dt>'
+		    					html5+= '<dt>戏剧示范课初级</dt>'
 		    				}
-		    				html+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
+		    				html5+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
 		    			}else if(item.type === 6){
 		    				if(checkList6 ===0){
 		    					checkList6 = 1
-		    					html+= '<dt>戏剧示范课中级</dt>'
+		    					html6+= '<dt>戏剧示范课中级</dt>'
 		    				}
-		    				html+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
+		    				html6+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
 		    			}else if(item.type === 7){
 		    				if(checkList7 ===0){
 		    					checkList7 = 1
-		    					html+= '<dt>戏剧示范课高级</dt>'
+		    					html7+= '<dt>戏剧示范课高级</dt>'
 		    				}
-		    				html+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
+		    				html7+= '<dd><label><input type="checkbox" value='+item.id+'>'+item.name+'</label></dd>'
 		    			}
 		    		})
 
-		    		$('.scroll dl').html(html)
+		    		$('.scroll dl').html(html1+html2+html3+html4+html5+html6+html7)
 					getVideoList({
 						limit:200,
 		                sort: 'sortNo',
-		                order:'asc'
+		                order:'asc',
+	                	associatorUserSelect:2
 					})
+					getVideoList2({
+						limit:200,
+		                sort: 'sortNo',
+		                order:'asc',
+		                associatorUserSelect:2
+					});
 		    	}
 		    })
 		}
@@ -621,23 +638,29 @@
 			var ls2 = 0
 
 		    ajax({
-		    	url:'/medu/user/findMAssociatorUserVideoList',
+		    	url:'/edu/user/findMAssociatorUserVideoList',
 		    	data:data,
 		    	success:function(res){
-
 		    		vipList= res.value
-
 		    		vipList.forEach(function(item){
 		    			if(item.video.associatorUserSelect=== 1){
+
+		    				$(".scroll dl input").each(function(index){
+		    					if($(this).val() == item.video.id){
+		    						checkIds += $(this).val()+',';
+		    						$(this).attr("disabled",'disabled')
+		    					}
+		    				})
+
 		    				ls1+=1
-		    				html2+= '<div><span class="playImg"><img src="'+item.video.headImgUrl+'"></span><video controls="controls" src="'+item.video.url+'"  width="100%" height="100%" controls="controls"></video></div>'
+		    				html2+= '<div><span class="playImg" data-id="'+item.video.id+'" ><img src="'+item.video.headImgUrl+'"></span><video controls="controls" src="'+item.video.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.video.name+'</span><p>适合'+item.video.beginAge+'~'+item.video.endAge+'岁 | <font>时长：约'+item.video.timeLength+'分钟</font></p></div>'
 		    			}else{
 		    				ls2+=1
-		    				html+= '<div><span class="playImg"><img src="'+item.video.headImgUrl+'"></span><video controls="controls" src="'+item.video.url+'"  width="100%" height="100%" controls="controls"></video></div>'
+		    				html+= '<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.video.headImgUrl+'"></span><video controls="controls" src="'+item.video.url+'"  width="100%" height="100%" controls="controls"></video></div>'
 		    			}
 		    		})
 
-		    		$('.videoVip .switchCont').html(html)
+		    		//$('.videoVip .switchCont').html(html)
 		    		$('.video11 .switchCont').html(html2)
 
 
@@ -645,22 +668,29 @@
 		    		//$('.video11 .switchCont div:last').remove();
 
 
-		    		$('.videoVip .switchCont div:first').insertBefore($('.videoVip .switchCont div:last'))
+		    		//$('.videoVip .switchCont div:first').insertBefore($('.videoVip .switchCont div:last'))
 		    		//$('.viedeVip .switchCont div:last').remove();
 
 
 
-		    		if(!vipList.length || vipList.length != JSON.parse(localStorage.getItem('userInfo')).associatorUserType.videoNum){
+		    		/*if(!vipList.length || vipList.length != JSON.parse(localStorage.getItem('userInfo')).associatorUserType.videoNum){
 		    			$(".isVip").show();
-		    		}
+		    		}*/
+	    			if(ls1 >= JSON.parse(localStorage.getItem('userInfo')).associatorUserType.videoNum){
+	    				$(".isVip").remove();
+	    			}else{
+    					$(".isVip").show();
+	    			}
 		    		if(ls1){
 		    			$(".video11").show()
-		    			if(ls1<4){
+		    			if(ls1<6){
 		    				$(".video11 .switch").remove()	
 							$('.video11 .switchCont').css({margin:0})
+		    			}else if(ls1 === 6){
+		    				$('.video11 .switchCont').html($('.video11 .switchCont').html()+$('.video11 .switchCont').html())
 		    			}
 		    		}
-		    		if(ls2){
+		    		/*if(ls2){
 		    			if(ls1 === checkList.length){
 		    				$(".isVip").remove();
 		    			}else{
@@ -671,16 +701,51 @@
 		    				$(".videoVip .switch").remove()
 							$('.videoVip .switchCont').css({margin:0})
 		    			}
-		    		}
+		    		}*/
 
 		    	}
 		    })
 		}
+
+
+		// 查询会员已添加的视频信息列表
+		function getVideoList2(data){
+			var html ='';
+			var ls1 = 0
+
+		    ajax({
+		    	url:'/edu/user/findMVideoListForVip',
+		    	data:data,
+		    	success:function(res){
+		    		vipList= res.value
+		    		vipList.forEach(function(item){
+	    				ls1+=1
+	    				html+= '<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><p>'+item.name+'</p></div>'
+		    		})
+		    		if(ls1){
+		    			$(".videoVip").show()
+		    		}
+
+		    		$('.videoVip .switchCont').html(html)
+		    		$('.videoVip .switchCont div:first').insertBefore($('.videoVip .switchCont div:last'))
+
+	    			if(ls1<4){
+	    				$(".videoVip .switch").remove()
+						$('.videoVip .switchCont').css({margin:0})
+	    			}else if(ls1 === 4){
+		    			$('.videoVip .switchCont').html($('.videoVip .switchCont').html()+$('.videoVip .switchCont').html())
+
+	    			}
+
+		    	}
+		    })
+		}
+
 		// 会员添加视频
 		function createUserVideo(data){
 
 		    ajax({
-		    	url:'/medu/user/createOrMergeMAssociatorUserVideo',
+		    	url:'/edu/user/createOrMergeMAssociatorUserVideo',
 		    	data:data,
 		    	success:function(res){
 		    		$(".addVideo").hide();

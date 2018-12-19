@@ -1,7 +1,7 @@
 document.writeln("	<div class=\'footer\'>");
 document.writeln("		<div class=\'main\'>");
 document.writeln("			<div class=\'footerLeft\'>");
-document.writeln("				<h2>010-80220817</h2>");
+document.writeln("				<h2>400-060-2099</h2>");
 document.writeln("				<dl>");
 document.writeln("					<dt>");
 document.writeln("						<br>邮箱：meiyu@xingguangedu.com<br>");

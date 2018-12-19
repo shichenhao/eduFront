@@ -105,6 +105,7 @@ a{
 }
 
 .menu a.login .isLogin{
+	text-align: center;
 	display: inline-block;
 	border:1px solid #00a8f1;
 	border-radius: 35px;
@@ -2432,7 +2433,7 @@ a{
 	text-align: center;
 }
 
-.videoVip{
+.videoVip,.video11{
 	display: none;
 }
 
@@ -2469,7 +2470,7 @@ a{
 .viedeVip{
 	position: relative;
 	overflow: hidden;
-	height: 234px;
+	height: 264px;
 }
 
 .switch{
@@ -2509,11 +2510,14 @@ a{
 	float: left;
 	margin-right: 25px;
 	width: 410px;
-	height: 234px;
+	height: 264px;
 	position: relative;
 }
 
-
+.switchCont div p{
+	font-size: 20px;
+	text-align: center;
+}
 
 .switchCont div img,.switchCont div video{
 	width: 410px;
@@ -2523,7 +2527,7 @@ a{
 	margin-left: -435px;
 }
 
-.viedeVip .switchCont div:before,.video11 .videoItem .switchCont div:before{
+.viedeVip .switchCont div .playImg:before,.video11 .videoItem .switchCont div .playImg:before{
 	content: '';
 	display: block;
 	width: 77px;
@@ -2535,11 +2539,15 @@ a{
 	right: 0px;
 }
 
-.video11 .videoItem .switchCont div:before{
+.video11 .videoItem .switchCont div .playImg:before{
 	width:45px;
 	height: 45px;
-	top: 8px;
-	right: 8px;
+	top: 0px;
+	right: 0px;
+}
+
+.playImg{
+	cursor: pointer;
 }
 
 .switchCont div span.playImg:after{
@@ -2566,7 +2574,7 @@ a{
 .videoBox{
 	position: relative;
 }
-
+/*
 .video11 .videoItem .switchCont div{
 	height: 130px;
 }
@@ -2574,12 +2582,16 @@ a{
 .video11 .videoItem{
 	height: 170px;
 }
-
+*/
 .videoBox .switch{
 	width: 26px;
 	height: 51px;
 	top: -112px;
 	left: -30px;
+}
+
+.videoVip .videoBox .switch{
+	top: 18px;
 }
 
 .videoBox .switchRight{
@@ -2618,6 +2630,7 @@ a{
 	font-size: 16px;
 	padding-top: 12px;
 	color: #333;
+	text-align: left;
 }
 
 .videoItem .switchCont div p font{
@@ -2647,7 +2660,7 @@ a{
 	height: 80px;
 	background-size: 100%;
 	margin: 0 auto;
-	top: 40px;
+	top: 30px;
 }
 
 .loginPop,.addVideo{
@@ -2824,19 +2837,48 @@ a{
 }
 
 .vipRight{
-	width: 156px;
-	height: 136px;
+	width: 192px;
+	height: 222px;
 	background: url(images/vip.png) no-repeat;
 	position: fixed;
 	bottom: 10%;
 	left: 50%;
 	margin-left: 650px;
+	cursor: pointer;
 }
 
 
 .videoPlay{
-	padding: 20px 0;
-	min-height: 500px;
+	width: 900px;
+	height: 600px;
+	margin: 20px auto;
+	position: relative;
+}
+
+.videoPlay:after{
+	content: '';
+	display: block;
+	width: 134px;
+	height: 134px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: url(images/vip_13.png) no-repeat;
+}
+
+.videoPlay img{
+	width: 100%;
+}
+
+.videoPlay video,.videoPlays img,.videoPlays:after{
+	display: none;
+}
+
+.videoPlays video{
+	display: block;
 }
 
 .videoShare{
@@ -2885,7 +2927,7 @@ a{
         outline: none;
         cursor: pointer;
     }
-    input[type=checkbox]:after{
+    input[type=checkbox]:after,input[disabled]:after{
         content: '✔';
         position: absolute;
         display: block;
@@ -2905,7 +2947,10 @@ a{
         border-radius: 20px;
         opacity: 0;
     }
-    input[type=checkbox]:checked:after{
+    input[disabled]:after{
+    	background: #999;
+    }
+    input[type=checkbox]:checked:after,input[disabled]:after{
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
         border-radius: 0;
@@ -2913,15 +2958,31 @@ a{
     }
 
 
+input[disabled]{
+	border-color: #ccc;
+	background:#eee;
+}
 
 
 
+video::-internal-media-controls-download-button { 
+display:none; 
+}
 
+video::-webkit-media-controls-enclosure { 
+overflow:hidden; 
+}
+
+video::-webkit-media-controls-panel { 
+width: calc(100% + 30px); 
+}
 
 
 @media screen and (max-width: 700px) {
 	.videoPlay{
 		min-height: 100px;
+		width: 100%;
+		height: auto;
 	}
 	.videoShare{
 		display: none;
@@ -3143,9 +3204,13 @@ a{
 	.footer .main{
 		display: block;
 	}
+	.footerLeft dl{
+		padding-bottom: 10px;
+	}
 	.footerLeft dl dt{
 		line-height: 30px;
 		width: auto;
+		margin-top: -40px;
 	}
 	.footerBottom{
 		display: none;

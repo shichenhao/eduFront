@@ -48,9 +48,13 @@ $(function(){
 	$("body").on('click','.loginBtn span:eq(1)',function(){
 		var obj = {
     		passWord:$('.loginBox .oldPas').val(),
-    		newPassWord:$('.loginBox .password').val(),
+    		newPassWord:$('.loginBox .password:eq(1)').val(),
     	}
 		upPws(obj)
+	})
+
+	$(".vipRight").click(function(){
+		$('html,body').animate({scrollTop: 0}, 500);
 	})
 
 
@@ -78,7 +82,7 @@ function loginHide(){
 // 登录
 function login(data){
     ajax({
-    	url:'/medu/user/login',
+    	url:'/edu/user/login',
     	data:data,
     	success:function(data){
     		localStorage.setItem('userInfo',JSON.stringify(data.value))
@@ -91,7 +95,7 @@ function login(data){
 // 修改密码
 function upPws(data){
     ajax({
-    	url:'/medu/user/updateUserPassWord',
+    	url:'/edu/user/updateUserPassWord',
     	data:data,
     	success:function(res){
 			$(".alertPop2").fadeIn().delay(500).fadeOut(200).find('div').html('修改成功');   
@@ -104,7 +108,7 @@ function upPws(data){
 // 登出
 function loginOut(data){
     $.ajax({
-    	url:'/medu/user/loginOut',
+    	url:'/edu/user/loginOut',
     	method:'POST',
     	data:data,
     	success:function(data){
