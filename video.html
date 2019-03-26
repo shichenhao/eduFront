@@ -335,7 +335,7 @@
 		// 获取免费视频
 		function getVideo(data){
 		    ajax({
-		    	url:'/edu/user/findMVideoList',
+		    	url:'/medu/user/findMVideoList',
 		    	data:data,
 		    	success:function(data){
 		    		list = data.value
@@ -555,7 +555,7 @@
 			var html7 ='';
 
 		    ajax({
-		    	url:'/edu/user/findMVideoListForVip',
+		    	url:'/medu/user/findMVideoListForVip',
 		    	data:data,
 		    	success:function(data){
 		    		var checkList1 = 0
@@ -639,7 +639,7 @@
 			var ls2 = 0
 
 		    ajax({
-		    	url:'/edu/user/findMAssociatorUserVideoList',
+		    	url:'/medu/user/findMAssociatorUserVideoList',
 		    	data:data,
 		    	success:function(res){
 		    		vipList= res.value
@@ -715,11 +715,7 @@
 			var ls1 = 0
 
 		    ajax({
-<<<<<<< HEAD
 		    	url:'/medu/user/findMVideoListForVip',
-=======
-		    	url:'/edu/user/findMVideoListForVip',
->>>>>>> 95eaf6b28bf93da86c955491874ed07bd6c93cfc
 		    	data:data,
 		    	success:function(res){
 		    		vipList= res.value
@@ -750,7 +746,7 @@
 		function createUserVideo(data){
 
 		    ajax({
-		    	url:'/edu/user/createOrMergeMAssociatorUserVideo',
+		    	url:'/medu/user/createOrMergeMAssociatorUserVideo',
 		    	data:data,
 		    	success:function(res){
 		    		$(".addVideo").hide();
