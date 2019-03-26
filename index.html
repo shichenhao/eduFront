@@ -16,6 +16,7 @@
 			</div>
 			<div class="menu">
 				<a href="index.html" class="active">首页</a>
+				<a href="news.html">资讯</a>
 				<a href="material.html">教材&教参</a>
 				<a href="authentication.html">认证测评</a>
 				<a href="study.html">研学</a>
@@ -210,20 +211,20 @@
 			</dl>
 			<dl>
 				<dt>
-					<img src="images/teacher2.png">
-					<span>唐莹</span>
+					<img src="images/teacher2.jpg">
+					<span>季准</span>
 				</dt>
 				<dd>
-					毕业于中央戏剧学院，主要从事青少年戏剧戏曲教育。拥有多年的教学与舞台实践经历。
+					毕业于中央戏剧学院表演系，曾任职中国文联、北京儿童艺术剧院、北京电影学院研究院，多年从事表演类培训及艺考的教学工作，有着丰富的教学经验。
 				</dd>
 			</dl>
 			<dl>
 				<dt>
-					<img src="images/teacher5.png">
-					<span>刘付大纬</span>
+					<img src="images/teacher5.jpg">
+					<span>周琳娜</span>
 				</dt>
 				<dd>
-					本硕专业为影视表演和发展与教育心理学,优秀的戏剧教育与教育戏剧教师。
+					毕业于中央戏剧学院，高中就读于北京舞蹈学院附中歌舞剧班。从事儿童戏剧教育多年，并在中国传媒大学深造，获得广播电视编导与新媒体专业学位。
 				</dd>
 			</dl>
 			<dl>
@@ -311,6 +312,98 @@
 			</dl>
 		</div>
 	</div>
+	<div class="main" id="app">
+		<div class="title title6 title28">
+			<h2>公司动态</h2>
+		</div>
+		<div class="newsContainer">
+			<div class="floatL">
+				<div class="newsBox">
+					<div class="newsTit">
+						新闻热点<span>/NEWS</span>
+						<a href="./newsList.html?type=1">MORE</a>
+					</div>
+					<div class="newsCont" v-if="list.list1.length">
+						<p v-for="item in list.list1" :key="item.id">
+							<a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a>
+							<span>{{item.createTime.substr(0,10)}}</span>
+						</p>
+					</div>
+				</div>
+				<div class="newsBox">
+					<div class="newsTit">
+						艺术节<span>/Arts festival</span>
+						<a href="./newsList.html?type=3">MORE</a>
+					</div>
+					<div class="newsCont" v-if="list.list3.length">
+						<p v-for="item in list.list3" :key="item.id">
+							<a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a>
+							<span>{{item.createTime.substr(0,10)}}</span>
+						</p>
+					</div>
+				</div>
+				<div class="newsBox">
+					<div class="newsTit">
+						剧目教材<span>/Repertoire</span>
+						<a href="./newsList.html?type=5">MORE</a>
+					</div>
+					<div class="newsCont" v-if="list.list5.length">
+						<p v-for="item in list.list5" :key="item.id">
+							<a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a>
+							<span>{{item.createTime.substr(0,10)}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="floatR">
+				<div class="newsBox">
+					<div class="newsTit">
+						师资培训<span>/Training</span>
+						<a href="./newsList.html?type=2">MORE</a>
+					</div>
+					<div class="newsCont" v-if="list.list2.length">
+						<dl v-for="item in list.list2" :key="item.id">
+							<dt>
+								<font>{{item.createTime.substr(0,4)}}</font>
+								<span>{{item.createTime.substr(5,5)}}</span>
+							</dt>
+							<dd>
+								<a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a>
+								<span>{{item.introduction}}</span>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="newsBox">
+					<div class="newsTit">
+						艺术研学<span>/Research</span>
+						<a href="./newsList.html?type=4">MORE</a>
+					</div>
+					<div class="newsCont" v-if="list.list4.length">
+						<p v-for="item in list.list4" :key="item.id">
+							<a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a>
+							<span>{{item.createTime.substr(0,10)}}</span>
+						</p>
+					</div>
+				</div>
+				<div class="newsBox">
+					<div class="newsTit">
+						市场合作<span>/RCooperation</span>
+						<a href="./newsList.html?type=6">MORE</a>
+					</div>
+					<div class="newsCont" v-if="list.list6.length">
+						<p v-for="item in list.list6" :key="item.id">
+							<a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a>
+							<span>{{item.createTime.substr(0,10)}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="newsMore">
+				<a href="./news.html">浏览更多>></a>
+			</div>
+		</div>
+	</div>
 	<div class="cooperation">
 		<div class="title title3">
 			<h2>合作单位</h2>
@@ -386,6 +479,7 @@
 			<a><img src="images/honor4.png"></a>
 		</div>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script type="text/javascript" src="js/baseHtml.js"></script>
 	<script src="js/jquery.min.js"></script>
   	<script src="js/swiper.min.js"></script>

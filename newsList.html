@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>关于我们</title>
+	<title>新闻列表</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
   	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
 	<link rel="stylesheet" type="text/css" href="css.css">
@@ -15,7 +15,7 @@
 			</div>
 			<div class="menu">
 				<a href="index.html">首页</a>
-				<a href="news.html">资讯</a>
+				<a class="active" href="news.html">资讯</a>
 				<a href="material.html">教材&教参</a>
 				<a href="authentication.html">认证测评</a>
 				<a href="study.html">研学</a>
@@ -23,7 +23,7 @@
 				<a href="campus.html">戏剧校园</a>
 				<a href="partner.html">合作伙伴</a>
 				<a href="box.html">戏剧盒子</a>
-				<a class="active" href="about.html">关于我们</a>
+				<a href="about.html">关于我们</a>
 				<a href="video.html">视频中心</a>
 				<a class="login">
 					<font class="isLogin">会员登录</font>
@@ -41,39 +41,39 @@
 			</div>
 		</div>
 	</div>
-	<div class="banner banner3 banner9"></div>
-	<div class="about bgNone">
-		<div class="main">
-			<div class="aboutTit">
-				<a href="about.html">关于我们</a>
-				<a class="active">联系我们</a>
+	<div class="main" id="app">
+		<div class="navAds">
+			<a href='./news.html'>首页</a>&gt;{{navName}}
+		</div>
+		<div class="newsList">
+			<div class="newsItemCont newsListLeft">
+					<dl v-for="item in list" :key="item.id">
+						<dt><a :href="'./newsDetail.html?id='+item.id" :title='item.title'>{{item.title}}</a></dt>
+						<dd>{{item.title}}</dd>
+						<dd>
+							<span>
+								{{item.createTime.substr(0,10)}}
+								<a :href="'./newsDetail.html?id='+item.id">了解更多&gt;&gt;</a>
+							</span>
+						</dd>
+					</dl>
+					<div class="page" v-if="pages.ls >= 10">
+						<span @click="clickPage(item-1)" v-if="pages.index < 5 ? item < 10 : pages.index+5 >= item && pages.index-3 <= item" v-for="item in pages.ls" :class="{'active' : (item-1) === pages.index}">{{item}}</span>
+					</div>
 			</div>
-			<div class="contact">
-				<div class="contactDel">
-					<p>
-						地址：北京市大兴区星光视界中心1C座301<br>
-						电话：010-80220825 陈女士<br>
-						微博：美育星光<br>
-						微信：美育星光、美育星光课堂
-					</p>
-					<div>
-						<img src="images/ewm.jpg">
-						关注美育星光
-					</div>
-					<div>
-						<img src="images/ewmkt.jpg">
-						关注美育星光课堂
-					</div>
-				</div>
-				<div class="contactMap">
-					<img src="images/about.jpg">
-				</div>
+			<div class="newsListRight">
+				<h2>热门排行</h2>
+				<ul>
+					<li v-for="(item,index) in hotList"><a :href="'./newsDetail.html?id='+item.id"><span>{{(index+1)}}.</span>{{item.title}}</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script type="text/javascript" src="js/baseHtml.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/base.js"></script>
+	<script type="text/javascript" src="js/newsList.js"></script>
 	<script src="js/footer.js"></script>
 </body>
 </html>

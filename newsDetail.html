@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>新闻列表</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div class="header">
+		<div class="main">
+			<div class="logo">
+				<a href="index.html"></a>
+				<span class="menuShow"></span>
+			</div>
+			<div class="menu">
+				<a href="index.html">首页</a>
+				<a class="active" href="news.html">资讯</a>
+				<a href="material.html">教材&教参</a>
+				<a href="authentication.html">认证测评</a>
+				<a href="study.html">研学</a>
+				<a href="art.html">艺术节</a>
+				<a href="campus.html">戏剧校园</a>
+				<a href="partner.html">合作伙伴</a>
+				<a href="box.html">戏剧盒子</a>
+				<a href="about.html">关于我们</a>
+				<a href="video.html">视频中心</a>
+				<a class="login">
+					<font class="isLogin">会员登录</font>
+					<span>
+						<font class="upPas">修改密码</font>
+						<font class="loginOut">退出</font>
+					</span>
+				</a>
+			</div>
+			<div class="headerApp">
+				<span>APP下载</span>
+				<div>
+					<img src="images/i_111.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div id="app">
+			<div class="navAds">
+				<a href='./news.html'>首页</a>&gt;<a :href='"./newsList.html?type="+type'>{{navName}}</a>>{{detail.title}}
+			</div>
+			<div class="newsDetailTit">
+				<h1>{{detail.title}}</h1>
+				<p>
+					<span>{{detail.source}}</span>
+					<span>时间：{{detail.createTime}}</span>
+				</p>
+			</div>
+			<div class="newsDetailCont" v-html="detail.content"></div>
+		</div>
+		<div class="newsDetailShare">
+			<div class="newsDetailShareSpan">分享到：</div>
+			<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="js/baseHtml.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/base.js"></script>
+	<script type="text/javascript" src="js/newsDetail.js"></script>
+	<script src="js/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>公司动态</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div class="header">
+		<div class="main">
+			<div class="logo">
+				<a href="index.html"></a>
+				<span class="menuShow"></span>
+			</div>
+			<div class="menu">
+				<a href="index.html">首页</a>
+				<a class="active" href="news.html">资讯</a>
+				<a href="material.html">教材&教参</a>
+				<a href="authentication.html">认证测评</a>
+				<a href="study.html">研学</a>
+				<a href="art.html">艺术节</a>
+				<a href="campus.html">戏剧校园</a>
+				<a href="partner.html">合作伙伴</a>
+				<a href="box.html">戏剧盒子</a>
+				<a href="about.html">关于我们</a>
+				<a href="video.html">视频中心</a>
+				<a class="login">
+					<font class="isLogin">会员登录</font>
+					<span>
+						<font class="upPas">修改密码</font>
+						<font class="loginOut">退出</font>
+					</span>
+				</a>
+			</div>
+			<div class="headerApp">
+				<span>APP下载</span>
+				<div>
+					<img src="images/i_111.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner banner3 banner12"></div>
+	<div id="app">
+		<div class="newsBox1">
+			<div class="main">
+				<div class="floatL">
+					<div class="newsItemBox">
+						<div class="newsItemTit">
+							<h2>新闻热点<a href="./newsList.html?type=1">MORE</a></h2>
+							<p>News hotspot</p>
+						</div>
+						<div class="newsItemCont">
+							<dl v-for="item in list.list1" :key="item.id">
+								<dt><a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a></dt>
+								<dd>{{item.introduction}}</dd>
+								<dd>
+									<span>
+										{{item.createTime.substr(0,10)}}
+										<a :href="'./newsDetail.html?id='+item.id">了解更多>></a>
+									</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="floatR">
+					<div class="newsItemBox">
+						<div class="newsItemTit">
+							<h2>师资培训<a href="./newsList.html?type=2">MORE</a></h2>
+							<p>Teacher training</p>
+						</div>
+						<div class="newsItemCont">
+							<dl v-for="item in list.list2" :key="item.id">
+								<dt><a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a></dt>
+								<dd>{{item.introduction}}</dd>
+								<dd>
+									<span>
+										{{item.createTime.substr(0,10)}}
+										<a :href="'./newsDetail.html?id='+item.id">了解更多>></a>
+									</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="newsBox1 newsBox2">
+			<div class="main">
+				<div class="floatL">
+					<div class="newsItemBox">
+						<div class="newsItemTit">
+							<h2>艺术节<a href="./newsList.html?type=3">MORE</a></h2>
+							<p>Arts festival</p>
+						</div>
+						<div class="newsItemCont">
+							<dl v-for="item in list.list3" :key="item.id">
+								<dt><a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a></dt>
+								<dd>{{item.introduction}}</dd>
+								<dd>
+									<span>
+										{{item.createTime.substr(0,10)}}
+										<a :href="'./newsDetail.html?id='+item.id">了解更多>></a>
+									</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="floatR">
+					<div class="newsItemBox">
+						<div class="newsItemTit">
+							<h2>艺术研学<a href="./newsList.html?type=4">MORE</a></h2>
+							<p>Art research</p>
+						</div>
+						<div class="newsItemCont">
+							<dl v-for="item in list.list4" :key="item.id">
+								<dt><a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a></dt>
+								<dd>{{item.introduction}}</dd>
+								<dd>
+									<span>
+										{{item.createTime.substr(0,10)}}
+										<a :href="'./newsDetail.html?id='+item.id">了解更多>></a>
+									</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="newsBox1">
+			<div class="main">
+				<div class="floatL">
+					<div class="newsItemBox">
+						<div class="newsItemTit">
+							<h2>剧目教材<a href="./newsList.html?type=5">MORE</a></h2>
+							<p>Drama textbook</p>
+						</div>
+						<div class="newsItemCont">
+							<dl v-for="item in list.list5" :key="item.id">
+								<dt><a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a></dt>
+								<dd>{{item.introduction}}</dd>
+								<dd>
+									<span>
+										{{item.createTime.substr(0,10)}}
+										<a :href="'./newsDetail.html?id='+item.id">了解更多>></a>
+									</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="floatR">
+					<div class="newsItemBox">
+						<div class="newsItemTit">
+							<h2>市场合作<a href="./newsList.html?type=6">MORE</a></h2>
+							<p>market collaboration</p>
+						</div>
+						<div class="newsItemCont">
+							<dl v-for="item in list.list6" :key="item.id">
+								<dt><a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a></dt>
+								<dd>{{item.introduction}}</dd>
+								<dd>
+									<span>
+										{{item.createTime.substr(0,10)}}
+										<a :href="'./newsDetail.html?id='+item.id">了解更多>></a>
+									</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="js/baseHtml.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/base.js"></script>
+	<script type="text/javascript" src="js/news.js"></script>
+	<script src="js/footer.js"></script>
+</body>
+</html>

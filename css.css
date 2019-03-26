@@ -26,6 +26,13 @@ a{
 	text-decoration: none;
 }
 
+.floatL{
+	float: left;
+}
+.floatR{
+	float: right;
+}
+
 .main{
 	width: 1280px;
 	margin: 0 auto;
@@ -45,7 +52,8 @@ a{
 	left: 0;
 	top: 0;
 	background: #fff;
-	z-index: 2
+	z-index: 2;
+	box-shadow: 0 0 20px #f7f7f8;
 }
 
 .headerFixed{
@@ -105,6 +113,7 @@ a{
 }
 
 .menu a.login .isLogin{
+	text-align: center;
 	display: inline-block;
 	border:1px solid #00a8f1;
 	border-radius: 35px;
@@ -262,6 +271,9 @@ a{
 }
 .banner11{
 	background-image: url(images/banner11.jpg);
+}
+.banner12{
+	background-image: url(images/banner12.jpg);
 }
 
 .banner a{
@@ -599,6 +611,9 @@ a{
 }
 .title27 h2{
 	background-image: url(images/title27.png);
+}
+.title28 h2{
+	background-image: url(images/title28.png);
 }/*
 .title26 span:before{
 	border-bottom: 1px solid #fff;
@@ -681,7 +696,7 @@ a{
 	font-size: 14px;
 	color: #666;
 	line-height: 30px;
-	padding: 0 20px;
+	padding: 0 15px;
 }
 
 .top10Cont dl:hover dd:after, .top10Cont dl:hover dd:before{
@@ -742,9 +757,9 @@ a{
 	font-size: 18px;
 	color: #fff;
 	flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 }
 
 .cooperationCont div:nth-child(1) a:nth-child(3){
@@ -1071,12 +1086,12 @@ a{
 .trainCont:before{
 	content: '';
 	position: absolute;
-    border-left:25px solid transparent;
-    border-right:25px solid transparent;
-    border-top:25px solid #fff;
-    left: 50%;
-    margin-left: -12px;
-    top: 0;
+		border-left:25px solid transparent;
+		border-right:25px solid transparent;
+		border-top:25px solid #fff;
+		left: 50%;
+		margin-left: -12px;
+		top: 0;
 }
 
 .trainLink{
@@ -1138,18 +1153,18 @@ a{
 }
 
 .studentPrive:before {
-    content: '';
-    width: 12px;
-    height: 12px;
-    border: solid #fff;
-    border-width: 0px 4px 4px 0;
-    transform: rotate(135deg);
-    margin-left: 4px;
+		content: '';
+		width: 12px;
+		height: 12px;
+		border: solid #fff;
+		border-width: 0px 4px 4px 0;
+		transform: rotate(135deg);
+		margin-left: 4px;
 }
 
 .studentRight:before {
-    transform: rotate(315deg);
-    margin-left: -4px;
+		transform: rotate(315deg);
+		margin-left: -4px;
 }
 
 .studentCenterMobile{
@@ -1345,12 +1360,12 @@ a{
 .expandTop:after{
 	content: '';
 	position: absolute;
-    border-left:24px solid transparent;
-    border-right:24px solid transparent;
-    border-top:24px solid #00a6ed;
-    left: 50%;
-    margin-left: -24px;
-    bottom: -24px;
+		border-left:24px solid transparent;
+		border-right:24px solid transparent;
+		border-top:24px solid #00a6ed;
+		left: 50%;
+		margin-left: -24px;
+		bottom: -24px;
 }
 
 
@@ -1398,12 +1413,12 @@ a{
 .expandTop ul li.active:before,.expandTop ul li:hover:before{
 	content: '';
 	position: absolute;
-    border-left:9px solid transparent;
-    border-right:9px solid transparent;
-    border-top:9px solid #fff;
-    left: 50%;
-    margin-left: -9px;
-    bottom: -9px;
+		border-left:9px solid transparent;
+		border-right:9px solid transparent;
+		border-top:9px solid #fff;
+		left: 50%;
+		margin-left: -9px;
+		bottom: -9px;
 }
 
 .expandCont{
@@ -1885,7 +1900,7 @@ a{
 	font-size: 18px;
 	color: #464646;
 	width: 100%;
-    border-collapse: collapse;
+		border-collapse: collapse;
 }
 
 .responsibilityTable table th{
@@ -2022,12 +2037,12 @@ a{
 .mechanismCont a span:after{
 	content: '';
 	position: absolute;
-    border-left:8px solid transparent;
-    border-right:8px solid transparent;
-    border-bottom:8px solid #fff;
-    left: 50%;
-    margin-left: -4px;
-    top: 12px;
+		border-left:8px solid transparent;
+		border-right:8px solid transparent;
+		border-bottom:8px solid #fff;
+		left: 50%;
+		margin-left: -4px;
+		top: 12px;
 }
 
 .mechanismCont a span i{
@@ -2120,8 +2135,8 @@ a{
 
 
 .about{
- 	width: 1280px;
-    margin: 0 auto;
+	width: 1280px;
+		margin: 0 auto;
 	border-top:8px solid #1d7aeb;
 	background: url(images/about_07.png) no-repeat center 228px;
 }
@@ -2148,12 +2163,12 @@ a{
 	content: '';
 	display: none;
 	position: absolute;
-    border-left:14px solid transparent;
-    border-right:14px solid transparent;
-    border-top:14px solid #1d7aeb;
-    left: 50%;
-    margin-left: -14px;
-    bottom: -14px;
+		border-left:14px solid transparent;
+		border-right:14px solid transparent;
+		border-top:14px solid #1d7aeb;
+		left: 50%;
+		margin-left: -14px;
+		bottom: -14px;
 }
 
 .aboutTit a:hover,.aboutTit a.active{
@@ -2312,7 +2327,7 @@ a{
 	font-size: 18px;
 	color: #666;
 	width: 100%;
-    border-collapse: collapse;
+		border-collapse: collapse;
 }
 
 .teaderSearch table th{
@@ -2432,7 +2447,7 @@ a{
 	text-align: center;
 }
 
-.videoVip{
+.videoVip,.video11{
 	display: none;
 }
 
@@ -2469,7 +2484,7 @@ a{
 .viedeVip{
 	position: relative;
 	overflow: hidden;
-	height: 234px;
+	height: 264px;
 }
 
 .switch{
@@ -2501,7 +2516,7 @@ a{
 .switchCont{
 	position: relative;
 	overflow: hidden;
-	width: 500%;
+	width: 800%;
 }
 
 .switchCont div{
@@ -2509,11 +2524,14 @@ a{
 	float: left;
 	margin-right: 25px;
 	width: 410px;
-	height: 234px;
+	height: 264px;
 	position: relative;
 }
 
-
+.switchCont div p{
+	font-size: 20px;
+	text-align: center;
+}
 
 .switchCont div img,.switchCont div video{
 	width: 410px;
@@ -2523,7 +2541,7 @@ a{
 	margin-left: -435px;
 }
 
-.viedeVip .switchCont div:before,.video11 .videoItem .switchCont div:before{
+.viedeVip .switchCont div .playImg:before,.video11 .videoItem .switchCont div .playImg:before{
 	content: '';
 	display: block;
 	width: 77px;
@@ -2535,11 +2553,15 @@ a{
 	right: 0px;
 }
 
-.video11 .videoItem .switchCont div:before{
+.video11 .videoItem .switchCont div .playImg:before{
 	width:45px;
 	height: 45px;
-	top: 8px;
-	right: 8px;
+	top: 0px;
+	right: 0px;
+}
+
+.playImg{
+	cursor: pointer;
 }
 
 .switchCont div span.playImg:after{
@@ -2566,7 +2588,7 @@ a{
 .videoBox{
 	position: relative;
 }
-
+/*
 .video11 .videoItem .switchCont div{
 	height: 130px;
 }
@@ -2574,12 +2596,16 @@ a{
 .video11 .videoItem{
 	height: 170px;
 }
-
+*/
 .videoBox .switch{
 	width: 26px;
 	height: 51px;
 	top: -112px;
 	left: -30px;
+}
+
+.videoVip .videoBox .switch{
+	top: 18px;
 }
 
 .videoBox .switchRight{
@@ -2618,6 +2644,7 @@ a{
 	font-size: 16px;
 	padding-top: 12px;
 	color: #333;
+	text-align: left;
 }
 
 .videoItem .switchCont div p font{
@@ -2647,7 +2674,7 @@ a{
 	height: 80px;
 	background-size: 100%;
 	margin: 0 auto;
-	top: 40px;
+	top: 30px;
 }
 
 .loginPop,.addVideo{
@@ -2687,9 +2714,9 @@ a{
 .loginBox ul li{
 	position: relative;
 	padding-bottom: 6px;
-    border-bottom: 1px solid #cecece;
-    position: relative;
-    margin-top: 40px;
+		border-bottom: 1px solid #cecece;
+		position: relative;
+		margin-top: 40px;
 }
 
 .loginCenter{
@@ -2736,7 +2763,7 @@ a{
 	padding: 12px 20px;
 	font-size: 14px;
 	border-radius: 20px;
-     background-color: #409EFF;
+		 background-color: #409EFF;
 	color: #fff;
 }
 
@@ -2824,19 +2851,48 @@ a{
 }
 
 .vipRight{
-	width: 156px;
-	height: 136px;
+	width: 192px;
+	height: 222px;
 	background: url(images/vip.png) no-repeat;
 	position: fixed;
 	bottom: 10%;
 	left: 50%;
 	margin-left: 650px;
+	cursor: pointer;
 }
 
 
 .videoPlay{
-	padding: 20px 0;
-	min-height: 500px;
+	width: 900px;
+	height: 600px;
+	margin: 20px auto;
+	position: relative;
+}
+
+.videoPlay:after{
+	content: '';
+	display: block;
+	width: 134px;
+	height: 134px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: url(images/vip_13.png) no-repeat;
+}
+
+.videoPlay img{
+	width: 100%;
+}
+
+.videoPlay video,.videoPlays img,.videoPlays:after{
+	display: none;
+}
+
+.videoPlays video{
+	display: block;
 }
 
 .videoShare{
@@ -2850,6 +2906,20 @@ a{
 	padding: 10px;
 	width: 150px;
 	box-shadow: 0 0 10px #fff;
+}
+
+.playUrl{
+	width: 150px;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 300px;
+	margin-left: 460px;
+
+}
+
+.playUrl img{
+	width: 150px;
 }
 
 .videoShare canvas{
@@ -2867,61 +2937,462 @@ a{
 }
 
 
-    input[type=checkbox]{
-    	margin: 0px 10px -4px 0;
-        /*同样，首先去除浏览器默认样式*/
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        /*编辑我们自己的样式*/
-        position: relative;
-        width: 20px;
-        height: 20px;
-        background: transparent;
-        border:1px solid #00BFFF;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-        outline: none;
-        cursor: pointer;
-    }
-    input[type=checkbox]:after{
-        content: '✔';
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: #00BFFF;
-        color: #fff;
-        text-align: center;
-        line-height: 18px;
-        /*增加动画*/
-        -webkit-transition: all ease-in-out 300ms;
-        -moz-transition: all ease-in-out 300ms;
-        transition: all ease-in-out 300ms;
-        /*利用border-radius和opacity达到填充的假象，首先隐藏此元素*/
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        border-radius: 20px;
-        opacity: 0;
-    }
-    input[type=checkbox]:checked:after{
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        border-radius: 0;
-        opacity: 1;
-    }
+.newsContainer{
+	overflow: hidden;
+	padding-top: 100px;
+}
+
+.newsContainer .floatL,.newsContainer .floatR{
+	width: 600px;
+}
+.newsTit{
+	height: 50px;
+	line-height: 50px;
+	background:#f0f0f0;
+	padding: 0 10px 0 8px;
+	font-weight: bold;
+	font-size: 24px;
+	color: #111;
+	position:	relative;
+}
+.newsTit span{
+	color: #b2b2b2;
+	font-size: 16px;
+	font-weight: 100;
+	padding-left: 6px;
+	text-transform: Uppercase;
+}
+
+.newsTit a{
+	position: absolute;
+	font-size: 16px;
+	color: #666;
+	font-weight: 200;
+	right: 10px;
+	top: 0;
+	bottom: 0;
+	margin: 0 auto;
+}
+
+.newsCont{
+	padding: 10px 0 0;
+	height: 270px;
+}
+
+.newsCont p{
+	line-height: 43px;
+	height: 43px;
+	overflow: hidden;
+	color: #666;
+	padding-left: 20px;
+	position: relative;
+}
+
+.newsCont p:before{
+	content: '';
+	display: block;
+	width: 8px;
+	height: 8px;
+	background: #dadada;
+	border-radius: 8px;
+	position: absolute;
+	left: 0;
+	top: 18px;
+}
+
+.newsCont p a{
+	color: #666;
+	display: inline-block;
+	width: 500px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.newsCont p span{
+	position: absolute;
+	right: 0;
+	top: 0px;
+}
+
+.newsCont dl{
+	overflow: hidden;
+	padding: 15px 0 35px;
+	cursor: pointer;
+}
+
+.newsCont dl:hover a{
+	color: #00a8f1
+}
+
+.newsCont dl:hover dt font{
+	background: #00a8f1
+}
+
+.newsCont dl dt{
+	width: 68px;
+	height: 58px;
+	text-align: center;
+	border: 1px solid #e2e2e2;
+	border-radius: 3px;
+	float: left;
+}
+
+.newsCont dl dt font{
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	background: #abacad;
+	color: #fff;
+	font-size: 20px;
+}
+
+
+.newsCont dl dt span{
+	color: #666;
+	line-height: 28px;
+	font-size: 16px;
+}
+
+.newsCont dl dd{
+	width: 515px;
+	float: right;
+	color: #666
+}
+
+.newsCont dl dd a{
+	line-height: 35px;
+	font-size: 20px;
+	color: #111;
+}
+
+.newsCont dl dd span{
+	display: block;
+}
+
+
+.newsMore{
+	clear: both;
+	text-align: center;
+	padding: 100px 0;
+}
+
+.newsMore a{
+	width: 288px;
+	height: 75px;
+	text-align: center;
+	line-height: 75px;
+	color: #fff;
+	display: inline-block;
+	font-size:26px;
+	font-weight: bold;
+	border-radius: 5px;
+	background: url(images/newsMore.jpg) no-repeat right bottom #1fa1e9;
+}
+
+.newsBox1{
+	padding: 80px 0 35px;
+}
+
+.newsBox2{
+	background: #f6f6f7;
+}
+
+.newsBox1 .floatL,.newsBox1 .floatR{
+	width: 600px;
+}
+
+.newsBox1 .main{
+	overflow: hidden;
+}
+
+.newsItemTit{
+	height: 80px;
+	border-bottom: 1px dotted #dedede
+}
+
+.newsItemTit h2{
+	font-size: 30px;
+	color: #111;
+	height: 44px;
+	position: relative;
+}
+
+.newsItemTit h2 a{
+	position: absolute;
+	right: 0;
+	top: 44px;
+	font-size: 18px;
+}
+
+.newsItemTit p{
+	text-transform: Uppercase;
+	font-size: 18px;
+	color: #cfcfcf;
+	font-weight: 200;
+}
+
+.newsItemCont{
+	padding: 15px 0;
+}
+
+.newsItemCont dl dt{
+	line-height: 55px;
+}
+
+.newsItemCont dl dt a{
+	font-size: 20px;
+	color: #111;
+	font-weight: bold;
+}
+
+.newsItemCont dl dd{
+	font-size: 16px;
+	color: #666;
+	line-height: 30px;
+}
+
+.newsItemCont dl dd span{
+	display: block;
+	height: 45px;
+	line-height: 45px;
+	font-size: 16px;
+	color: #999;
+	position: relative;
+}
+
+.newsItemCont dl dd span a{
+	color: #999;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.navAds{
+	line-height: 95px;
+	color: #999;
+	font-size: 16px;
+	border-bottom: 1px solid #e8e8e8
+}
+
+.navAds a{
+	color: #999
+}
+
+.newsList{
+	overflow: hidden;
+}
+
+.newsListLeft{
+	width: 785px;
+	float: left;
+}
+
+.newsListRight{
+	padding: 10px 15px;
+	width: 390px;
+	background: #f8f8f8;
+	float: right;
+	margin-top: 35px;
+}
+
+
+.newsListRight h2{
+	color: #111;
+	font-size: 20px;
+	height: 50px;
+	line-height: 50px;
+}
+
+.newsListRight h2:after{
+	content: 'HOT';
+	color: #fff;
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	font-weight: 400;
+	margin-left: 4px;
+	font-size: 12px;
+	background: linear-gradient(to right, #2480f0, #00a7f1);
+}
+
+.newsListRight ul li{
+	line-height: 36px;
+	font-size: 18px;
+}
+
+.newsListRight ul li a{
+	color: #888;
+}
+
+.newsListRight ul li a:hover{
+	color: #00a8f1
+}
+
+.newsListRight ul li span{
+	padding-right: 10px;
+	font-style: oblique;
+}
+
+.newsListRight ul li:nth-child(-n+3) span,.newsListRight ul li:nth-child(-n+3) a:hover span{
+	color: #00a8f1;
+}
+
+.newsDetailTit{
+	padding: 35px 0;
+	border-bottom: 1px dotted #ccc;
+}
+
+.newsDetailTit h1{
+	font-size: 28px;
+	color: #111;
+	line-height: 50px;
+}
+
+.newsDetailTit p{
+	color: #999;
+	padding-top: 20px;
+}
+
+.newsDetailShare{
+	border-top: 1px dotted #ccc;
+	position: relative;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	color: #888;
+}
+
+.newsDetailShare span{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.newsDetailCont{
+	padding: 20px 0;
+	color: #888;
+	line-height: 180%;
+}
+
+.newsDetailCont img{
+	max-width: 900px;
+	margin: 0 auto;
+	display: block;
+}
+
+
+.bdsharebuttonbox {
+	position: absolute;
+	top: 12px;
+	left: 70px;
+}
+
+.page{
+	text-align: center;
+	padding: 50px 0;
+}
+
+.page span{
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	display: inline-block;
+	border: 1px solid #e9e9e9;
+	color: #999;
+	margin: 0 4px;
+	font-size: 24px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.page span:hover,.page .active{
+	color: #fff;
+	background: #00a8f1;
+	border-color: #00a8f1
+}
 
 
 
 
 
 
+		input[type=checkbox]{
+			margin: 0px 10px -4px 0;
+				/*同样，首先去除浏览器默认样式*/
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				/*编辑我们自己的样式*/
+				position: relative;
+				width: 20px;
+				height: 20px;
+				background: transparent;
+				border:1px solid #00BFFF;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				outline: none;
+				cursor: pointer;
+		}
+		input[type=checkbox]:after,input[disabled]:after{
+				content: '✔';
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: #00BFFF;
+				color: #fff;
+				text-align: center;
+				line-height: 18px;
+				/*增加动画*/
+				-webkit-transition: all ease-in-out 300ms;
+				-moz-transition: all ease-in-out 300ms;
+				transition: all ease-in-out 300ms;
+				/*利用border-radius和opacity达到填充的假象，首先隐藏此元素*/
+				-webkit-border-radius: 20px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				opacity: 0;
+		}
+		input[disabled]:after{
+			background: #999;
+		}
+		input[type=checkbox]:checked:after,input[disabled]:after{
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				border-radius: 0;
+				opacity: 1;
+		}
+
+
+input[disabled]{
+	border-color: #ccc;
+	background:#eee;
+}
+
+
+
+video::-internal-media-controls-download-button { 
+display:none; 
+}
+
+video::-webkit-media-controls-enclosure { 
+overflow:hidden; 
+}
+
+video::-webkit-media-controls-panel { 
+width: calc(100% + 30px); 
+}
 
 
 @media screen and (max-width: 700px) {
 	.videoPlay{
 		min-height: 100px;
+		width: 100%;
+		height: auto;
 	}
 	.videoShare{
 		display: none;
@@ -2949,7 +3420,7 @@ a{
 	.banner{
 		width: 100%;
 		height: 200px;
-  		background-size: cover;
+			background-size: cover;
 	}
 	.banner a{
 		height: 200px;
@@ -3143,9 +3614,13 @@ a{
 	.footer .main{
 		display: block;
 	}
+	.footerLeft dl{
+		padding-bottom: 10px;
+	}
 	.footerLeft dl dt{
 		line-height: 30px;
 		width: auto;
+		margin-top: -40px;
 	}
 	.footerBottom{
 		display: none;
@@ -3558,7 +4033,58 @@ a{
 	.playBox div img{
 		width: 100%
 	}
+	.newsCont{
+		height: auto;	
+		padding: 10px 0;
+	}
 
+	.newsContainer{
+		padding-top: 	20px;
+	}
+
+	.newsContainer .floatL,.newsContainer .floatR,.newsBox1 .floatL, .newsBox1 .floatR,.newsListLeft,.newsListRight{
+		width: 100%;
+		float: none;
+	}
+	.page{
+		padding: 	40px 0 0
+	}
+	.newsListLeft dl{
+		padding: 0 10px;
+	}
+	.newsCont dl{
+		padding: 10px;
+		display: 	flex;
+	}
+	.newsCont dl dd{
+		flex: 1;
+		padding-left: 10px;
+	}
+	.newsBox1{
+		padding: 30px 0;
+	}
+	.navAds{
+		line-height: 	50px;
+		padding: 0 10px;
+	}
+	.newsDetailShare{
+		display: none;
+	}
+	.newsDetailTit{
+		padding: 	10px;
+	}
+	.newsDetailTit h1{
+		line-height: 	40px;
+	}
+	.newsDetailTit p{
+		padding-top: 	10px;
+	}
+	.newsDetailCont{
+		padding: 	20px 10px;
+	}
+	.newsDetailCont img{
+		max-width: 	100;
+	}
 
 }
 
@@ -3570,8 +4096,8 @@ a{
 
 
 video::-webkit-media-controls-enclosure {
-    overflow:hidden;
+		overflow:hidden;
 }
 video::-webkit-media-controls-panel {
-     width: calc(100% + 30px); 
+		 width: calc(100% + 30px); 
 }

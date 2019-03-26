@@ -23,7 +23,7 @@ document.writeln("				<span>登录</span>");
 document.writeln("				<span>确认</span>");
 document.writeln("			</div>");
 document.writeln("			<div class=\'loginCenter\'>");
-document.writeln("				忘记密码？联系客服010-80220817");
+document.writeln("				忘记密码？联系客服400-060-2099");
 document.writeln("			</div>");
 document.writeln("		</div>");
 document.writeln("	</div>");
