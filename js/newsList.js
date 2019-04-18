@@ -22,11 +22,11 @@ var app = new Vue({
     getList:function(type){
         var _this = this
          $.ajax({
-            url:'/medu/user/findMNewsByPage',
+            url:'/edu/user/findMNewsByPage',
             method:'POST',
             data:{
                 limit:20,
-                start:_this.pages.index,
+                start:_this.pages.index * 20,
                 type:type
             },
             success:function(data){
@@ -42,7 +42,7 @@ var app = new Vue({
     getHot:function(type){
         var _this = this
          $.ajax({
-            url:'/medu/user/findMNewsByPage',
+            url:'/edu/user/findMNewsByPage',
             method:'POST',
             data:{
                 limit:10,

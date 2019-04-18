@@ -49,7 +49,7 @@
 			<div class="newsItemCont newsListLeft">
 					<dl v-for="item in list" :key="item.id">
 						<dt><a :href="'./newsDetail.html?id='+item.id" :title='item.title'>{{item.title}}</a></dt>
-						<dd>{{item.title}}</dd>
+						<dd>{{item.introduction}}</dd>
 						<dd>
 							<span>
 								{{item.createTime.substr(0,10)}}
@@ -57,7 +57,7 @@
 							</span>
 						</dd>
 					</dl>
-					<div class="page" v-if="pages.ls >= 10">
+					<div class="page" v-if="pages.ls >= 2">
 						<span @click="clickPage(item-1)" v-if="pages.index < 5 ? item < 10 : pages.index+5 >= item && pages.index-3 <= item" v-for="item in pages.ls" :class="{'active' : (item-1) === pages.index}">{{item}}</span>
 					</div>
 			</div>

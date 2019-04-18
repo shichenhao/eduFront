@@ -60,10 +60,10 @@ var app = new Vue({
     getList:function(type){
         var _this = this
          $.ajax({
-            url:'/medu/user/findMNewsByPage',
+            url:'/edu/user/findMNewsByPage',
             method:'POST',
             data:{
-                limit:6,
+                limit: type === 2 ? 2 : 6,
                 type:type
             },
             success:function(data){

@@ -335,7 +335,7 @@
 		// 获取免费视频
 		function getVideo(data){
 		    ajax({
-		    	url:'/medu/user/findMVideoList',
+		    	url:'/edu/user/findMVideoList',
 		    	data:data,
 		    	success:function(data){
 		    		list = data.value
@@ -464,7 +464,7 @@
 				html9+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			video10.forEach(function(item){
-				html10+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><span<video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video>>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
+				html10+='<div><span class="playImg" data-id="'+item.id+'" ><img src="'+item.headImgUrl+'"></span><video controls="controls" src="'+item.url+'"  width="100%" height="100%" controls="controls"></video><span>'+item.name+'</span><p>适合'+item.beginAge+'~'+item.endAge+'岁 | <font>时长：约'+item.timeLength+'分钟</font></p></div>'
 			})
 			$('.video1 .switchCont').html(html1)
 			$('.video2 .switchCont').html(html2)
@@ -555,7 +555,7 @@
 			var html7 ='';
 
 		    ajax({
-		    	url:'/medu/user/findMVideoListForVip',
+		    	url:'/edu/user/findMVideoListForVip',
 		    	data:data,
 		    	success:function(data){
 		    		var checkList1 = 0
@@ -639,7 +639,7 @@
 			var ls2 = 0
 
 		    ajax({
-		    	url:'/medu/user/findMAssociatorUserVideoList',
+		    	url:'/edu/user/findMAssociatorUserVideoList',
 		    	data:data,
 		    	success:function(res){
 		    		vipList= res.value
@@ -715,7 +715,7 @@
 			var ls1 = 0
 
 		    ajax({
-		    	url:'/medu/user/findMVideoListForVip',
+		    	url:'/edu/user/findMVideoListForVip',
 		    	data:data,
 		    	success:function(res){
 		    		vipList= res.value
@@ -746,7 +746,7 @@
 		function createUserVideo(data){
 
 		    ajax({
-		    	url:'/medu/user/createOrMergeMAssociatorUserVideo',
+		    	url:'/edu/user/createOrMergeMAssociatorUserVideo',
 		    	data:data,
 		    	success:function(res){
 		    		$(".addVideo").hide();

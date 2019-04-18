@@ -82,7 +82,7 @@ function loginHide(){
 // 登录
 function login(data){
     ajax({
-    	url:'/medu/user/login',
+    	url:'/edu/user/login',
     	data:data,
     	success:function(data){
     		localStorage.setItem('userInfo',JSON.stringify(data.value))

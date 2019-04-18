@@ -18,7 +18,7 @@ var app = new Vue({
     getDetail:function(id){
         var _this = this
          $.ajax({
-            url:'/medu/user/findNews',
+            url:'/edu/user/findNews',
             method:'POST',
             data:{
                 id:id
